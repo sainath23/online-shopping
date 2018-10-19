@@ -27,4 +27,9 @@ public class JsonDataController {
 	public List<Product> getCategoryProductsByCategoryId(@PathVariable Long id) {
 		return productService.getActiveProductsByCategoryId(id);
 	}
+	
+	@GetMapping("/admin/all/products")
+	public List<Product> getAllProductsForAdmin() {
+		return productService.findAll();
+	}
 }

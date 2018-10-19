@@ -79,6 +79,11 @@
 			<c:if test="${userClickShowProduct == true}">
 				<%@ include file="single-product.jsp"%>
 			</c:if>
+			
+			<!-- userClickManageProducts -->
+			<c:if test="${userClickManageProducts == true}">
+				<%@ include file="manage-products.jsp"%>
+			</c:if>
 
 		</div>
 
@@ -98,8 +103,11 @@
 
 		<!-- Bootstrap Core JavaScript -->
 		<script src="${js}/bootstrap.min.js"></script>
+		
+		<script src="${js}/bootbox.min.js"></script>
+		
 		<script type="text/javascript" src="${js}/onlineshopping.js"></script>
-
+		
 	</div>
 
 </body>
