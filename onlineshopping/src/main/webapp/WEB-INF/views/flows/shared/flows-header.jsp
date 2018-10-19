@@ -49,69 +49,8 @@
 <body>
 
 	<div class="wrapper">
-
 		<!-- Navigation -->
-		<%@ include file="./shared/navbar.jsp"%>
+		<%@ include file="./flows-navbar.jsp" %>
 
 		<!-- Page Content -->
 		<div class="content">
-			<!-- Loading home content -->
-			<c:if test="${userClickHome == true}">
-				<%@ include file="home.jsp"%>
-			</c:if>
-
-			<!-- Load only when user clicks about -->
-			<c:if test="${userClickAbout == true}">
-				<%@ include file="about.jsp"%>
-			</c:if>
-
-			<!-- Load only when user clicks contact -->
-			<c:if test="${userClickContact == true}">
-				<%@ include file="contact.jsp"%>
-			</c:if>
-			
-			<!-- Load only when user clicks userClickAllProducts or userClickCategoryProducts -->
-			<c:if test="${userClickAllProducts == true or userClickCategoryProducts == true}">
-				<%@ include file="list-products.jsp"%>
-			</c:if>
-			
-			<!-- userClickShowProduct -->
-			<c:if test="${userClickShowProduct == true}">
-				<%@ include file="single-product.jsp"%>
-			</c:if>
-			
-			<!-- userClickManageProducts -->
-			<c:if test="${userClickManageProducts == true}">
-				<%@ include file="manage-products.jsp"%>
-			</c:if>
-
-		</div>
-
-		<!-- Footer comes here -->
-		<%@ include file="./shared/footer.jsp"%>
-
-		<!-- /.container -->
-
-		<!-- jQuery -->
-		<script src="${js}/jquery.js"></script>
-		
-		<script src="${js}/jquery.validate.min.js"></script>
-		
-		<!-- DataTable -->
-		<script src="${js}/jquery.dataTables.js"></script>
-		
-		<!-- DataTable Bootstrap JS -->
-		<script src="${js}/dataTables.bootstrap.js"></script>
-
-		<!-- Bootstrap Core JavaScript -->
-		<script src="${js}/bootstrap.min.js"></script>
-		
-		<script src="${js}/bootbox.min.js"></script>
-		
-		<script type="text/javascript" src="${js}/onlineshopping.js"></script>
-		
-	</div>
-
-</body>
-
-</html>

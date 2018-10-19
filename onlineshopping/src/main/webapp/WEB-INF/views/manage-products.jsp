@@ -86,6 +86,12 @@
 								<form:select class="form-control" id="categoryId"
 									path="categoryId" items="${categories}" itemLabel="name"
 									itemValue="id" />
+								<c:if test="${product.id == null}">
+								<div class="text-right">
+								<br />
+								<button type="button" data-toggle="modal" data-target="#categoryModal" class="btn btn-warning btn-xs">Add Category</button>
+								</div>
+								</c:if>
 							</div>
 						</div>
 
@@ -140,6 +146,39 @@
 						</tr>
 					</tfoot>
 				</table>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="categoryModal" role="dialog" tabindex="-1">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span>&times;</span>
+					</button>
+					<h4 class="modal-title">Add New Category</h4>
+				</div>
+				<div class="modal-body">
+					<form:form id="categoryForm" modelAttribute="category" action="${contextRoot}/manage/category" method="POST" class="form-horizontal">
+						<div class="form-group">
+							<label for="category_name" class="control-label col-md-4">Category Name</label>
+							<div class="col-md-8">
+								<form:input path="name" type="text" id="category_name" class="form-control" placeholder="Category name" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="category_description" class="control-label col-md-4">Category Description</label>
+							<div class="col-md-8">
+								<form:textarea path="description" id="category_description" cols="" rows="5" class="form-control" placeholder="Write category description"></form:textarea>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-md-offset-4 col-md-8">
+								<input type="submit" value="Add Category" class="btn btn-primary" />
+							</div>
+						</div>
+					</form:form>
+				</div>
 			</div>
 		</div>
 	</div>

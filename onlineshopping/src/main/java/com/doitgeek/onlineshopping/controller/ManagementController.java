@@ -53,6 +53,9 @@ public class ManagementController {
 			if (operation.equals("product")) {
 				mv.addObject("message", "Product submitted successfully!");
 			}
+			else if(operation.equals("category")) {
+				mv.addObject("message", "Category submitted successfully!");
+			}
 		}
 		return mv;
 	}
@@ -119,5 +122,18 @@ public class ManagementController {
 		Product product = productService.find(id);
 		mv.addObject("product", product);
 		return mv;
+	}
+	
+	@ModelAttribute("category")
+	public Category getCategory() {
+		return new Category();
+	}
+	
+	@PostMapping("/category")
+	public String processCategoryForm(@ModelAttribute Category category) {
+		category.setIsActive('Y');
+		categoryService.create(category);
+		
+		return "redirect:/manage/products?operation=category";
 	}
 }
